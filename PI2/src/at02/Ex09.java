@@ -45,35 +45,35 @@ public class Ex09 {
                 break;
             case "3":
             case "terça":
-                System.out.println("Aulas de Domingo");
+                System.out.println("Aulas de Terça");
                 for(int i=4;i<=5;i++){
                     System.out.println(vetor[i]);
                 }
              break;
             case "4":
             case "quarta":  
-                System.out.println("Aulas de Domingo");
+                System.out.println("Aulas de Quarta");
                 for(int i=6;i<=7;i++){
                     System.out.println(vetor[i]);
                 }
                 break;
             case "5":
             case "quinta":
-                System.out.println("Aulas de Domingo");
+                System.out.println("Aulas de Quinta");
                 for(int i=8;i<=9;i++){
                     System.out.println(vetor[i]);
                 }
                 break;
             case "6":
             case "sexta":
-                System.out.println("Aulas de Domingo");
+                System.out.println("Aulas de Sexta");
                 for(int i=10;i<=11;i++){
                     System.out.println(vetor[i]);
                 }
                 break;
             case "7":
             case "sabado":
-                System.out.println("Aulas de Domingo");
+                System.out.println("Aulas de Sabado");
                 for(int i=12;i<=13;i++){
                     System.out.println(vetor[i]);
                 }
@@ -83,7 +83,7 @@ public class Ex09 {
                boolean sair=true;
                return sair;  
             case "todas":
-                System.out.println("todas as aulas da semna: ");
+                System.out.println("todas as aulas da semana: ");
                  imprimirVetor(vetor);
                  break;
             default:
@@ -97,21 +97,34 @@ public class Ex09 {
     
     static String[]  aulas(String aulas[]){
         int d=1;
+        int a=1;
         for (int i = 0; i < aulas.length;i++){
-            System.out.println("Dia"+d+" da semana");
+            System.out.print("Dia"+d+" da semana \n aula "+a+" ");
+            a++;
             aulas[i]=input.next();    
             if(i%2!=0 || i==1){
                 System.out.println("");
                 d++;
+                a=1;
             }
+            
         }
    
         return aulas;
     }
     
-    static void imprimirVetor(String vetor[]){
+   static void imprimirVetor(String vetor[]){
+        int d=1,a=0;
+        
         for (int i = 0; i < vetor.length; i++) {
-            System.out.println("\nposicao"+i+" "+vetor[i]);
+            a++;
+                  
+            if(a>2){
+                System.out.println("");
+                d++;
+                a=1;
+            }
+            System.out.print("\n Dia"+d+"\n aula"+a+" "+vetor[i]);
             
         }
     }
